@@ -1,4 +1,4 @@
-# histogram.py
+__author__ = 'fabio.lana'
 
 import sys, struct
 from osgeo import gdal
@@ -18,15 +18,15 @@ if not success:
     print "Failed!"
     sys.exit(1)
 
-x1,y1 = gdal.ApplyGeoTransform(tInverse, minLong, minLat)
-x2,y2 = gdal.ApplyGeoTransform(tInverse, maxLong, maxLat)
+x1, y1 = gdal.ApplyGeoTransform(tInverse, minLong, minLat)
+x2, y2 = gdal.ApplyGeoTransform(tInverse, maxLong, maxLat)
 
 minX = int(min(x1, x2))
 maxX = int(max(x1, x2))
 minY = int(min(y1, y2))
 maxY = int(max(y1, y2))
 
-width = (maxX - minX) + 1
+width = (maxX-minX) + 1
 fmt = "<" + ("h" * width)
 
 histogram = {} # Maps height to # pixels with that height.
@@ -45,13 +45,13 @@ for y in range(minY, maxY+1):
                                gdalconst.GDT_Int16)
     # Testing:
 
-    #    s = scanline[:2]
-    #    print dump(s), struct.unpack("<h", s)
-    #    break
+#    s = scanline[:2]
+#    print dump(s), struct.unpack("<h", s)
+#    break
 
     # End of testing.
 
-    #    print dump(scanline)
+#    print dump(scanline)
     values = struct.unpack(fmt, scanline)
 
     for value in values:
@@ -63,4 +63,3 @@ for y in range(minY, maxY+1):
 
 for height in sorted(histogram.keys()):
     print height, histogram[height]
-
