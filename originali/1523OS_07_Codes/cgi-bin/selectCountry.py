@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!C:/Python27/ArcGIS10.2/python.exe
 
 import database
 database.open()
@@ -10,7 +10,7 @@ print '<body>'
 print '<form method="POST" action="selectArea.py">'
 print '<select name="countryID" size="10">'
 
-for id,name in database.list_countries():
+for id, name in database.list_countries():
     print '<option value="'+str(id)+'">'+name+'</option>'
 
 print '</select>'

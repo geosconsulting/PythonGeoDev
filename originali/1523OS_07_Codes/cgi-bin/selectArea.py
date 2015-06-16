@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!C:/Python27/ArcGIS10.2/python.exe -U
 
 import cgi
 import sys

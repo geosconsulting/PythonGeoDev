@@ -9,17 +9,17 @@ import shapely.wkt
 # Edit these constants as necessary for your setup.
 
 MYSQL_DBNAME   = "distal"
-MYSQL_USERNAME = "XXX"
-MYSQL_PASSWORD = "XXX"
+MYSQL_USERNAME = "fabio"
+MYSQL_PASSWORD = "albertone"
 
 POSTGIS_DBNAME   = "distal"
-POSTGIS_USERNAME = "XXX"
-POSTGIS_PASSWORD = "XXX"
+POSTGIS_USERNAME = "geonode"
+POSTGIS_PASSWORD = "geonode"
 
 SPATIALITE_DB_PATH = os.path.join(os.path.dirname(__file__),
                                   "..", "distal.db")
 
-DB_TYPE = "XXX" # One of: MySQL, PostGIS or SpatiaLite.
+DB_TYPE = "PostGIS" # One of: MySQL, PostGIS or SpatiaLite.
 
 #############################################################################
 
